@@ -1,0 +1,41 @@
+﻿<Window x:Class="ZipExtractor.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZipExtractor.Views"
+        mc:Ignorable="d"
+        Title="ZIP提取工具"
+        Height="200"
+        Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="ZIP文件"
+                           Width="70"
+                           VerticalAlignment="Center" />
+                <TextBox Width="300"
+                         Margin="2 0 0 0"
+                         VerticalAlignment="Center"
+                         Text="{Binding ZipPath}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Margin="0 2 0 0">
+                <TextBlock Text="输出路径"
+                           Width="70"
+                           VerticalAlignment="Center" />
+                <TextBox Width="300"
+                         Margin="2 0 0 0"
+                         VerticalAlignment="Center"
+                         Text="{Binding OutputDirectory}"/>
+            </StackPanel>
+            <Button Content="提取"
+                    Width="70"
+                    Margin="0 2 0 0"
+                    HorizontalAlignment="Right"
+                    Command="{Binding ExtractCommand}"/>
+        </StackPanel>
+    </Grid>
+</Window>
